@@ -1,0 +1,42 @@
+.c-form {
+  &__row {
+    @include desktop {
+      @include row;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__column {
+    margin-bottom: 1rem;
+    @include desktop {
+      @include column;
+    }
+  }
+
+  &__input {
+    border-radius: 5px;
+    border: none;
+    padding: 1em;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    box-shadow: $shadow;
+  }
+
+  &__button {
+    border-radius: 5px;
+    box-shadow: $shadow;
+    border: none;
+    padding: 1em;
+    font-size: inherit;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: $primary;
+    font-family: inherit;
+    color: #fff;
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+}

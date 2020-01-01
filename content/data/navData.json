@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Home",
+    "url": "/",
+    "type": "internal"
+  },
+  {
+    "label": "About",
+    "url": "/about",
+    "type": "internal"
+  },
+  {
+    "label": "External",
+    "url": "https://google.co.uk",
+    "type": "external"
+  }
+]

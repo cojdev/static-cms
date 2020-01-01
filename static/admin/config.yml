@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: posts
+    label: Posts
+    folder: content/posts
+    create: true
+    fields:
+      - { name: path, label: Path, default: "posts/{{slug}}", widget: hidden }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+
+  - label: Settings
+    name: Settings
+    files:
+      - name: siteData
+        label: Site Data
+        file: content/data/siteData.json
+        fields:
+          - {name: siteName, label: Website Name}
+          - {name: siteLogo, label: Website Logo, widget: image}
+      - name: navigation
+        label: Navigation
+        file: content/data/navData.json
+        fields:
+          - name: navItems
+            label: Nav Items
+            widget: list
+            fields:
+              - {name: label, label: Label}
+              - {name: url, label: URL}
+              - {
+                name: type,
+                label: Type,
+                widget: select,
+                options: [internal, external]
+              }
+
+  - label: Pages
+    name: pages
+    files:
+      - label: Home
+        name: home
+        file: content/pages/home.md
+        fields:
+          - {name: template, widget: hidden, default: home}
+          - {name: title, label: Title}
+          - {name: path, label: "URL path"}
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Tagline, name: tagline, widget: string}
+              - label: Background
+                name: background
+                widget: image
+          - name: sections
+            label: Sections
+            widget: list
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Content, name: content, widget: markdown}
+              - {label: Image, name: image, widget: image}
+          - name: meta
+            label: SEO Metadata
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}
+      - label: About
+        name: about
+        file: content/pages/about.md
+        fields:
+          - {name: template, widget: hidden, default: simple}
+          - {name: title, label: Title}
+          - {name: description, label: Description}
+          - {name: body, label: Body, widget: markdown}
+          - {name: path, label: "URL path"}
+          - name: meta
+            label: SEO Metadata
+            widget: object
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}

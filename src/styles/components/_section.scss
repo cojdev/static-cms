@@ -1,0 +1,27 @@
+.c-section {
+  @include desktop {
+    display: flex;
+  }
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+    max-width: 400px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+  }
+
+  &__content {
+    padding: 2rem;
+    background-color: #fff;
+  }
+
+  &__small-heading {
+    @include small-heading;
+  }
+
+  &__heading {
+    @include section-heading;
+  }
+}

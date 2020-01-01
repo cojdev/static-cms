@@ -1,0 +1,147 @@
+.c-nav {
+  $top: &;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 1rem;
+  height: $nav-height;
+  z-index: 2;
+  transition: 350ms ease;
+
+  &--scrolled {
+    box-shadow: $shadow;
+  }
+
+  &__inner {
+    max-width: $site-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__logo-wrapper {
+    text-align: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    max-height: 100%;
+    width: auto;
+  }
+
+  &__logo-link {
+    height: calc(100% - 2rem);
+    display: inline-block;
+  }
+
+  &__list-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__hamburger {
+    display: inline-block;
+    border: none;
+    background: none;
+    display: block;
+    width: calc(#{$nav-height} - 1rem);
+    height: calc(#{$nav-height} - 1rem);
+    margin-top: 0.5rem;
+    position: relative;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__hamburger-line {
+    margin: 0 auto;
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    top: calc(50% - 3px);
+
+    &,
+    &:before,
+    &:after {
+      display: block;
+      height: 6px;
+      background-color: $primary;
+    }
+
+    &:before,
+    &:after {
+      @include pseudo;
+      width: 100%;
+    }
+
+    &:before {
+      transform: translateY(-14px);
+    }
+
+    &:after {
+      transform: translateY(14px);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: $site-width;
+    font-family: $heading-font;
+    text-transform: uppercase;
+    position: fixed;
+    top: $nav-height;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: $shadow;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20%);
+    transition: 300ms ease;
+
+    &--open {
+      visibility: visible;
+      transform: none;
+      opacity: 1;
+    }
+
+    @include desktop {
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      box-shadow: none;
+      visibility: visible;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  &__list-item {
+    margin: 1rem 0;
+
+    @include desktop {
+      margin: 0 0 0 1rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+
+    &--active {
+      color: $primary;
+    }
+  }
+}

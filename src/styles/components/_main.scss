@@ -1,0 +1,12 @@
+.c-main {
+  max-width: $site-width;
+  width: calc(100% - 2rem);
+  margin: $nav-height auto 0;
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  &--home {
+    margin-top: 0;
+  }
+}

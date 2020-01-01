@@ -1,0 +1,33 @@
+@import "variables";
+@import "mixins";
+
+@import "./components/footer";
+@import "./components/form";
+@import "./components/hero";
+@import "./components/main";
+@import "./components/section";
+@import "./components/nav";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $body-font;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+}
+
+a:not([class]) {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

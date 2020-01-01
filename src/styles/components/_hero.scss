@@ -1,0 +1,34 @@
+.c-hero {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  max-height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+
+  @include desktop {
+    background-attachment: fixed;
+  }
+
+  &:before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000, 0.2);
+  }
+
+  &__inner {
+    text-align: center;
+    position: relative;
+    margin-top: $nav-height;
+  }
+
+  &__heading {
+    @include main-heading;
+  }
+}

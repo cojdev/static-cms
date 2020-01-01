@@ -1,0 +1,8 @@
+.c-footer {
+  padding: 2rem;
+  text-align: center;
+
+  @include desktop {
+    padding: 4rem;
+  }
+}

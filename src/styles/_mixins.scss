@@ -1,0 +1,41 @@
+@mixin desktop {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin main-heading {
+  text-transform: uppercase;
+  font-size: 36px;
+  letter-spacing: 0.2ch;
+  line-height: 1.2;
+}
+
+@mixin section-heading {
+  font-size: 24px;
+  font-family: $heading-font;
+  line-height: 1;
+}
+
+@mixin small-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+}
+
+@mixin row($gap: 1rem) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $gap / -2;
+}
+
+@mixin column($width: 50%, $gap: 1rem) {
+  width: calc(#{$width} - #{$gap});
+  margin: $gap / 2;
+}
+
+@mixin pseudo($dis: block, $pos: absolute, $con: "") {
+  display: $dis;
+  position: $pos;
+  content: $con;
+}
